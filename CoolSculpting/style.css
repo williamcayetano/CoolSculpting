@@ -1,0 +1,252 @@
+*{
+	font-family: verdana;
+	margin: 0;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* font for header */
+@font-face {
+  font-family: playfairDisplay;
+  src: url('fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf');
+}
+
+/* font for menu */
+@font-face {
+  font-family: proximaNova;
+  src: url('fonts/Proxima_Nova/ProximaNova-Light.otf');
+}
+
+/* header style */
+.featured-header {
+	text-align: center;
+	font-family: playfairDisplay;
+	letter-spacing: .05rem;
+	font-weight: 400;
+	color: #E0E1E2;
+	font-size: 180px;
+	line-height: 200px;
+	margin-bottom: -26px;
+	position: relative;
+	z-index: -1;
+}
+
+/* menu green color */
+nav {
+	background: #006071;
+}
+
+/* strip browser styles for menu ul */
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+/* style menu anchor text */
+nav a {
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	display: block;
+	padding: 10px;
+	font-family: proximaNova;
+	font-weight: 400;
+}
+
+/* menu anchor text hover color */
+nav a:hover {
+	background-color: #CCC;
+	color: #006071;
+}
+
+/* style dropdown menu on hover */
+nav li:hover ul.dropdown-1 > li {
+  display: block;
+  background-color: #006071;
+}
+
+/* hide/style dropdown menu list items */
+ul.dropdown-1 li {
+  display: none;
+  position: relative;
+  width: 200px;
+}
+
+/* make dropdown menu a parent item and flex container */
+ul.dropdown-1 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* give different color for dropdown menu hover */
+ul.dropdown-1 a:hover {
+  background-color: #CCC;
+  color: #006071;
+}
+
+/* display sub-menus */
+ul.dropdown-1 li:hover ul.dropdown-2 li {
+  display: block;
+}
+
+/* hide dropdown menu, remove browser margin */
+ul.dropdown-2 li {
+  display: none;
+  margin: 0px;
+}
+
+/* position second dropdown menu; make flex container */
+ul.dropdown-2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  background-color: #006071;
+}
+
+/* hide mobile menu */
+#burger-nav {
+	display: none;
+}
+
+/* class added by jquery to mobile menu*/
+nav.open {
+    max-height: 500px;
+    width: 100%;
+    transition: max-height 1s linear;
+}
+	
+nav ul.dropdown-1 li {
+	padding: 0px;
+}
+
+.content {
+	display: flex;
+}
+
+.info {
+	padding: 70px 50px;
+}
+
+.info h3, p {
+	font-family: playfairDisplay;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+.breast-header {
+	letter-spacing: .05rem;
+	color: #006071;
+	font-size: 45px;
+}
+
+.first-paragraph {
+	color: #6D7375;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+.second-paragraph {
+	color: #445B70;
+	font-family: proximaNova;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.breast-btn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 15px 27px;
+  background-color: #A8D4DB;
+  font-family: inherit;
+  margin: 0;
+  filter: drop-shadow(0 20px 20px #CCCCCC);
+}
+
+.photo {
+	padding: 0 50px;
+}
+
+/* align menu icon to center */
+ion-icon {
+	vertical-align: middle;
+	margin-left: 5px;
+	margin-bottom: 2px;
+} 
+
+@media screen and (max-width: 650px) {
+	img {  
+		width: 400px;  
+		height: auto;   
+	} 
+}
+
+@media screen and (min-width: 768px) {
+	nav ul {
+		display: flex;
+		justify-content: center;
+		flex-shrink: 5;
+	}
+	
+	nav li {
+		padding: 0 30px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.featured-header {
+		font-size: 100px;
+	}
+
+	nav {
+		max-height: 0;
+    	overflow: hidden;
+  	}
+  	
+  	#burger-nav {
+		background: url(images/green-burger.png) no-repeat 98% center;
+    	cursor: pointer;
+  		display: block;
+  		width: 50px;
+  		height: 50px;
+  		position: relative;
+  		left: -15x;
+  		top: 0;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	nav li {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.content {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	/* hide icons on screens smaller than 1080px */
+	ion-icon {
+		display: none;
+	}
+	
+	nav li:hover ul.dropdown-1 li {
+		display: none;
+	}
+	
+	ul.dropdown-1 li:hover ul.dropdown-2 li {
+  		display: none;
+	}
+}
